@@ -11,10 +11,10 @@ app.use(bodyParser.json())
 //mysql connetion
 const pool = mysql.createPool({
     connectionLimit :10,
-    host            :'localhost',
-    user            :'root',
-    password        :'',
-    database        :'nodeapi'
+    host            :'########',  //  replace the # with your localhost name
+    user            :'########',  //  replace the # with your username 
+    password        :'########',  //  replace the # with your password
+    database        :'########'   //  replace the # with your database name
 })
 // Get the data from database
 app.get('',(req, res) => {
@@ -38,9 +38,10 @@ app.get('/:id',(req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err
 
-        console.log('connected as id '+connection.threadId+'')
-
-        connection.query('SELECT * FROM person WHERE id = ?', [req.params.id], (err, rows) => {
+       console.log('connected as id '+connection.threadId+'')
+       
+        // replace the # mark's with your sql qurey
+        connection.query('######################################', [req.params.id], (err, rows) => {
             connection.release()
             if (!err) {
                 res.send(rows)
@@ -56,8 +57,9 @@ app.delete('/:id',(req, res) => {
         if (err) throw err
 
         console.log('connected as id '+connection.threadId+'')
-
-        connection.query('DELETE FROM `person` WHERE id = ?',[req.params.id], (err, rows) => {
+        
+        // replace the # mark's with your sql qurey
+        connection.query('######################################',[req.params.id], (err, rows) => {
             connection.release()
             if (!err) {
                 res.send('the data has been deleted')
@@ -67,16 +69,18 @@ app.delete('/:id',(req, res) => {
         })
     })
 })
-// add the data from database
+// add the data for database
 app.post('',(req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err
 
         console.log('connected as id '+connection.threadId+'')
         
+        //pass the your data as array to body-parser like this
         const {username , password , email} = req.body
         
-        connection.query('INSERT INTO `person`(`username`, `password`, `email`) VALUES (?,?,?)',[username,password,email],(err, rows) => {
+        // replace the # mark's with your sql qurey
+        connection.query('#################################################',[username,password,email],(err, rows) => {
             connection.release()
             if (!err) {
                 res.send('new data has been added')
@@ -94,9 +98,11 @@ app.put('',(req, res) => {
         
         console.log('connected as id '+connection.threadId+'')
         
+        //pass the your data as array to body-parser like this
         const {id , username , password , email} = req.body
         
-        connection.query('UPDATE `person` SET `username`= ?,`password`= ?,`email`= ? WHERE id = ?',[username,password,email,id],(err, rows) => {
+        // replace the # mark's with your sql qurey
+        connection.query('##########################################',[username,password,email,id],(err, rows) => {
             connection.release()
             
             if (!err) {
