@@ -1,7 +1,7 @@
 # Node.js & Mysql
 This API can Work with CURD "Create , Update , Read , Delete " Operations to handled data between layout & mysql database using node.js as backend server side ,this API bulid on npm v7.0.12 & node.js v12.19.0 
 \
-## Tools that i used :
+## Tools used :
 OS       : Kali Lunix\
 IDE      : VS Code.\
 Database : mysql ,XAMPP v7.4.12-0\
