@@ -22,8 +22,8 @@ app.get('',(req, res) => {
         if (err) throw err
 
         console.log('connected as id '+connection.threadId+'')
-
-        connection.query('SELECT * FROM person', (err, rows) => {
+        // replace the # mark's with your sql qurey
+        connection.query('###################################', (err, rows) => {
             connection.release()
             if (!err) {
                 res.send(rows)
