@@ -7,13 +7,13 @@ IDE      : VS Code.\
 Database : mysql ,XAMPP v7.4.12-0\
 Other    : Postman for testing PUT, POST, GET and DELETE the data between The API and dababase you can download from  https://www.postman.com/downloads/ 
 \
-## The Dependencies you for node.js:
+## The Dependencies in package.josn file:
 1- Body-parser         v1.19.0\
 2- Express             v4.17.1\
 3- Mysql               v2.18.1\
 4- Nodemon             v2.0.7
 
-## For more information see my package.josn file 
+## Here more information about package.josn file 
 ```
 {
   "name": "node-mysql",
