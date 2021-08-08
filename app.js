@@ -69,7 +69,7 @@ app.delete('/:id',(req, res) => {
         })
     })
 })
-// add the data for database
+// insert data in database
 app.post('',(req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err
@@ -91,7 +91,7 @@ app.post('',(req, res) => {
         console.log(req.body)
     })
 })
-// add new data to database
+// update data in database
 app.put('',(req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err
